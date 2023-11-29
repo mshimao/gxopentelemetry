@@ -14,6 +14,9 @@ Os requisitos são:
 ### Instalar o Genexus 18 Upgrade 6
 
 Os recursos de observabilidade que iremos utilizar estão disponíveis no Genexus 18 Upgrade 6.
+A aplicação que será criada é será em .NET Core, será necessário instalar os requisitos para gerar a aplicação em .NET Core.
+
+- [Requisitos Gerador .NET](https://wiki.genexus.com/commwiki/wiki?38605,.NET+Generator+Requirements)
 
 ### Criar uma conta no Grafana Cloud
 

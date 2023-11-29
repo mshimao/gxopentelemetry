@@ -41,9 +41,9 @@ Para armazenar as informações dos logs, traces e métricas são utilizados "Ba
 | Trace  | Tempo  |
 | Métrica  | Prometheus  |
 
-Dessa forma 
+O diagrama abaixo apresenta a arquitetura dos componentes:
 
 ![diagrama dos componentes](images/gxopentelemetrydiagram.png)
 
-
+Próxima atividade: [Atividade 02](docs/02-atividade.md)
 
