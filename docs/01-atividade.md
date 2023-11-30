@@ -53,5 +53,5 @@ Para copiar os arquivos do hands-on realizar o clone do repositório git ou real
 
 ![githubproject](images/githubproject.png)
 
-Próxima atividade: [Atividade 02](docs/02-atividade.md)
+Próxima atividade: [Atividade 02](02-atividade.md)
 

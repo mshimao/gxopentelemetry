@@ -29,6 +29,6 @@ Publicar a imagem no Docker Hub.
 #### Passo 6
 Ir para a pasta collector e editar o arquivo docker-compose-net.yml para informar o nome da imagem criada.
 
-Próxima atividade: [Atividade 03](docs/03-atividade.md)
+Próxima atividade: [Atividade 03](03-atividade.md)
 
 

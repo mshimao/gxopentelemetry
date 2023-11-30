@@ -79,6 +79,6 @@ Copiar a string resultante do encoding e substituir a tag {base64 encoded userna
 
 ![prometheustokencollector](images/prometheustokencollector.png)
 
-Próxima atividade: [Atividade 04](docs/04-atividade.md)
+Próxima atividade: [Atividade 04](04-atividade.md)
 
 
