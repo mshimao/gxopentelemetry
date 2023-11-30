@@ -1,8 +1,34 @@
 # Atividade 3
 
 ### Configurar o coletor OpenTelemetry
+O arquivo collector.yaml é um arquivo de configuração usado pelo OpenTelemetry Collector. Ele define como o coletor deve funcionar, incluindo quais dados ele deve coletar, como deve processá-los e onde deve exportá-los.
+
+Aqui está um exemplo de como você pode estruturar este arquivo:
+```yaml
+receivers:  # Define quais dados o coletor deve receber
+    otlp:
+        protocols:
+            grpc:
+            http:
+
+processors:  # Define como os dados devem ser processados
+    batch:
+
+exporters:  # Define para onde os dados devem ser enviados
+    logging:
+        loglevel: debug
+
+service:  # Define a ordem em que receivers, processors e exporters são chamados
+    pipelines:
+        traces:
+            receivers: [otlp]
+            processors: [batch]
+            exporters: [logging]
+```
+No exemplo acima, o coletor está configurado para receber dados via OTLP (OpenTelemetry Protocol) sobre os protocolos gRPC e HTTP, processar esses dados em lotes e, em seguida, exportá-los para um logger com nível de log definido como debug.
 
 #### Passo 1
+Agora vamos configurar o exporter do Prometheus para exportarmos as métricas.
 Abrir um linha de comando e ir até a pasta collector, e editar o arquivo collector.yaml
 
 ![collector.yaml](images/collectoryaml.png)

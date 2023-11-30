@@ -23,11 +23,13 @@ Configurando o Genexus adequadamente uma aplicação gerada pelo Genexus pode ex
 
 Iremos utilizar a opção "Opentelemetry" como provider de observabilidade no Genexus, neste caso será necessário a utilização do OpenTelemetry collector para receber os logs, traces e métricas da aplicação e enviar para aplicação de análise.
 
-### Coletor Open Telemetry
+### Coletor OpenTelemetry
 
 OpenTelemetry Collector é uma implementação de código aberto que permite aos desenvolvedores coletar telemetria de seus aplicativos e exportá-la para várias plataformas de análise. Ele suporta a coleta de métricas, rastreamentos e logs.
 
 O Collector é projetado para ser um componente intermediário, o que significa que pode receber dados de várias fontes, transformá-los conforme necessário e, em seguida, exportá-los para vários destinos. Isso torna o Collector uma peça central na arquitetura de observabilidade, pois permite a interoperabilidade entre diferentes sistemas e ferramentas.
+
+- [OpenTelemetry Collector](https://opentelemetry.io/docs/collector/)
 
 ### Grafana
 
@@ -44,6 +46,12 @@ Para armazenar as informações dos logs, traces e métricas são utilizados "Ba
 O diagrama abaixo apresenta a arquitetura dos componentes:
 
 ![diagrama dos componentes](images/gxopentelemetrydiagram.png)
+
+### Copiar os arquivos do hands-on
+
+Para copiar os arquivos do hands-on realizar o clone do repositório git ou realizar o download do zip.
+
+![githubproject](images/githubproject.png)
 
 Próxima atividade: [Atividade 02](docs/02-atividade.md)
 

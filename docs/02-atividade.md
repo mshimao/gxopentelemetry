@@ -2,7 +2,7 @@
 
 ### Criar KB Genexus
 
-Vamos criar uma KB Genexus com as seguintes características:
+Vamos criar uma KB Genexus usando um xpw.
 ...
 
 
