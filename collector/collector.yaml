@@ -21,9 +21,9 @@ receivers:
 
 exporters:
   prometheusremotewrite/grafana-cloud:
-    endpoint: https://prometheus-us-central1.grafana.net/api/prom/push  
+    endpoint: {Prometheus endpoint}  
     headers:
-      authorization: Basic NjUyNDMzOmV5SnJJam9pWXpJM1pqUXdNRFUwT1dJNE5XUTNPV1EyTlRJeU5HSXlaVEF6WkRZNU1UZzNNR0V5WWpnMFlpSXNJbTRpT2lKSFpXNWxlSFZ6SWl3aWFXUWlPamMwTkRVNE4zMD0=
+      authorization: Basic {base64 encoded username:password}
 
   otlp:
     endpoint: tempo-us-central1.grafana.net:443
