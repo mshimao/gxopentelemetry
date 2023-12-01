@@ -35,13 +35,17 @@ O Collector é projetado para ser um componente intermediário, o que significa 
 
 Grafana é uma plataforma de análise e visualização de dados de código aberto. É comumente usada para visualizar séries temporais de dados de infraestrutura e aplicativos e criar painéis com gráficos ricos. Com Grafana, você pode criar alertas, notificações e ad-hoc explorar seus dados além de apenas visualizá-los. É muito usada em conjunto com outras ferramentas de observabilidade para monitorar o desempenho e a saúde de aplicações e sistemas.
 
+- [Site Grafana](https://grafana.com/grafana/)
+
+![Grafana Dashboard](images/grafanadashboard.png)
+
 Para armazenar as informações dos logs, traces e métricas são utilizados "Bancos de dados" específicos para cada tipo de informação, no caso do Grafana Cloud os softwares utilizados são os seguintes:
 
-| Tipo de informação | Software de armazenamento |
-| -------- | -------- |
-| Log  | Loki  |
-| Trace  | Tempo  |
-| Métrica  | Prometheus  |
+| Tipo de informação | Software de armazenamento | Documentação |
+| -------- | -------- | -------- |
+| Log  | Loki  | [Documentação Loki](https://grafana.com/docs/loki/latest/get-started/overview/) |
+| Trace  | Tempo  | [Documentação Tempo](https://grafana.com/docs/tempo/latest/getting-started/) |
+| Métrica  | Prometheus  | [Documentação Prometheus](https://prometheus.io/docs/introduction/overview/) |
 
 O diagrama abaixo apresenta a arquitetura dos componentes:
 

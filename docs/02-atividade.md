@@ -1,33 +1,94 @@
 # Atividade 2
 
-### Criar KB Genexus
+### Configurar o coletor OpenTelemetry
+O arquivo collector.yaml é um arquivo de configuração usado pelo OpenTelemetry Collector. Ele define como o coletor deve funcionar, incluindo quais dados ele deve coletar, como deve processá-los e onde deve exportá-los.
 
-Vamos criar uma KB Genexus usando um xpw.
-...
+Aqui está um exemplo de como você pode estruturar este arquivo:
+```yaml
+receivers:  # Define quais dados o coletor deve receber
+    otlp:
+        protocols:
+            grpc:
+            http:
 
+processors:  # Define como os dados devem ser processados
+    batch:
 
-### Configurar a observabilidade na aplicação GX
+exporters:  # Define para onde os dados devem ser enviados
+    logging:
+        loglevel: debug
+
+service:  # Define a ordem em que receivers, processors e exporters são chamados
+    pipelines:
+        traces:
+            receivers: [otlp]
+            processors: [batch]
+            exporters: [logging]
+```
+No exemplo acima, o coletor está configurado para receber dados via OTLP (OpenTelemetry Protocol) sobre os protocolos gRPC e HTTP, processar esses dados em lotes e, em seguida, exportá-los para um logger com nível de log definido como debug.
 
 #### Passo 1
-Configurar a propriedade Observability Provider com a opção "OpenTelemetry".
-- [Como configurar a propriedade Observability Provider](https://wiki.genexus.com/commwiki/wiki?53408,Observability+Provider+property)
+Agora vamos configurar o exporter do Prometheus para exportarmos as métricas.
+Abrir um linha de comando e ir até a pasta appjava, e editar o arquivo collector.yaml
+
+![collector.yaml](images/collectoryaml.png)
 
 
 #### Passo 2
-Para habilitar a geração do trace nas procedures, configurar a propriedade Generate Observability Span para Yes.
-- [Configurar a geração do trace nas procedures](https://wiki.genexus.com/commwiki/wiki?55801,Generate+Observability+span+property)
+Acessar o Grafana Cloud para pegar as chaves de autenticação, e configurar o coletor para acessar os serviços do Grafana Cloud.
+
+- [https://grafana.com/](https://grafana.com/)
+
+
+Clicar no botão "My Account".
+
+![grafanacloud](images/grafanacom.png)
+
+
+Após o login serão apresentados os componentes do Grafana Cloud disponíveis na conta.
+
+![grafanacloudcomponent](images/grafanadatasources.png)
+
 
 #### Passo 3
-Configurar o log do Genexus para gerar o log no arquivo client.log.
+Clicar na opção "Send Metrics" do Prometheus.
 
-#### Passo 4
-Gerar um deploy da aplicação para um container Docker.
+![prometheus](images/prometheus.png)
 
-#### Passo 5
-Publicar a imagem no Docker Hub.
 
-#### Passo 6
-Ir para a pasta collector e editar o arquivo docker-compose-net.yml para informar o nome da imagem criada.
+Copiar o endpoint "Remote Write Endpoint" e colar no endpoint do Prometheus no arquivo collector.yaml.
+
+![Remote Write Endpoint](images/prometheusendpoint.png)
+
+![prometheusendpointcollector](images/prometheusendpointcollector.png)
+
+
+Clicar em "Generate Token" para gerar o token de acesso ao Prometheus.
+
+![prometheustoken](images/prometheustoken.png)
+
+
+No popup informar o nome do token e clicar em "Create token".
+
+![prometheustoken2](images/prometheustoken2.png)
+
+
+Copiar o token gerado e guardar num arquivo texto.
+
+![prometheustoken3](images/prometheustoken3.png)
+
+
+Copiar o Username e usando um encoder base64, encodar a string "username:token".
+
+![prometheustoken4](images/prometheustoken4.png)
+
+![prometheustoken5](images/prometheustoken5.png)
+
+
+Copiar a string resultante do encoding e substituir a tag {base64 encoded username:password} da configuração do Prometheus no arquivo collector.yaml.
+
+![prometheustokencollector](images/prometheustokencollector.png)
+
 
 Próxima atividade: [Atividade 03](03-atividade.md)
 
