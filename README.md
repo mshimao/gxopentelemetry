@@ -11,6 +11,11 @@ Os requisitos são:
 - Conta do Grafana Cloud
 - Docker Desktop for Windows
 
+Software opcionais:
+- [VS Code](https://code.visualstudio.com/download) - Editor de código open source.
+- [Extensão para o VSCode - REST Client](https://marketplace.visualstudio.com/items?itemName=humao.rest-client) - Extensão que permite realizar chamadas a APIs REST.
+- [DevToys](https://devtoys.app/) - DevToys é um aplicativo para Windows que oferece uma coleção de ferramentas úteis para desenvolvedores. Ele inclui recursos como um comparador de texto, um verificador de JSON, um codificador/decodificador de URL, entre outros. É uma ferramenta útil para tarefas rápidas de desenvolvimento e depuração.
+
 ### Instalar o Genexus 18 Upgrade 6
 
 Os recursos de observabilidade que iremos utilizar estão disponíveis no Genexus 18 Upgrade 6.

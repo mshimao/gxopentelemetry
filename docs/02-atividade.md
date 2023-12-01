@@ -27,6 +27,8 @@ service:  # Define a ordem em que receivers, processors e exporters são chamado
 ```
 No exemplo acima, o coletor está configurado para receber dados via OTLP (OpenTelemetry Protocol) sobre os protocolos gRPC e HTTP, processar esses dados em lotes e, em seguida, exportá-los para um logger com nível de log definido como debug.
 
+- [Configuração do OpenTelemetry Collector](https://opentelemetry.io/docs/collector/configuration/)
+
 #### Passo 1
 Agora vamos configurar o exporter do Prometheus para exportarmos as métricas.
 Abrir um linha de comando e ir até a pasta appjava, e editar o arquivo collector.yaml
@@ -78,7 +80,11 @@ Copiar o token gerado e guardar num arquivo texto.
 ![prometheustoken3](images/prometheustoken3.png)
 
 
-Copiar o Username e usando um encoder base64, encodar a string "username:token".
+Copiar o Username e usando um encoder base64, encodar a string "username:token". Para isso você pode utilizar o DevToys uma ferramenta gratuida para Windows que possui várias funções úteis para o dia a dia.
+
+- [Download DevToys](https://devtoys.app/)
+
+Você também pode usar um o site https://www.base64encode.org/ para fazer o encode.
 
 ![prometheustoken4](images/prometheustoken4.png)
 
